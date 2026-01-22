@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create Password</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/index.css">
+
+  </head>
+  <body>
+    <div class="password-form">
+
+      <div class="input-password">
+        <input type="password" id="password" placeholder="Enter password">
+        <img src="icons/hide.png" id="eye-icon">
+      </div>
+
+      <div class="password-information">
+        <div class="capslock-message" id="caps-warning">
+          <img src="icons/info-sign.png" id="info-icon">
+          <p>
+            Caps Lock is on
+          </p>
+        </div>
+
+        <div class="invalid-message" id="invalid-warning">
+          <img src="icons/alert.png" id="alert-icon">
+          <p>
+            Your password is invalid. It must contain at least <span>8 characters</span>, including <span>1 uppercase letter</span>, <span>1 number</span> and <span>1 special character</span>.
+          </p>
+        </div>
+
+        <div id="successful-message">
+          <img src="icons/check (1).png" id="successful-icon">
+          <p>
+            Password created successfully.
+          </p>
+        </div>
+
+        <button id="create-btn">Create Password</button>
+
+        <div class="password-requirements" id="password-requirements">
+
+          <div id="eight-characters" class="eight-characters">
+            <img src="icons/full-stop.png" id="toggle-eight">
+            <p>At least 8 characters</p>
+          </div>
+
+          <div id="uppercase" class="uppercase">
+            <img src="icons/full-stop.png" id="toggle-uppercase">
+            <p>At least 1 uppercase letter</p>
+          </div>
+
+          <div id="number" class="number">
+            <img src="icons/full-stop.png" id="toggle-number">
+            <p>At least 1 number</p>
+          </div>
+
+          <div id="special-character" class="special-character">
+            <img src="icons/full-stop.png" id="toggle-specialcharacter">
+            <p>At least 1 special character</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

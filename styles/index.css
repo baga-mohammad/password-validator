@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-color: #F4F6F8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.password-form {
+  height: 100vh;
+  width: 350px;
+  background-color: #F4F6F8;
+  /* box-shadow: 0 4px 10px rgba(0,0,0,0.1); */
+  display: flex;
+  flex-direction: column;
+  flex: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-password {
+  width: 350px;
+  /* padding: 40px; */
+  padding: 15px 25px;
+  /* border: 2px solid brown; */
+  position: relative;
+}
+
+.input-password input {
+  width: 100%;
+  padding: 12px 46px 12px 12px;
+  border: 3px solid #000000;
+  box-shadow: 3px 3px 0;
+  outline: none;
+  font-size: 14px;
+}
+
+#eye-icon {
+  width: 22px;
+  cursor: pointer;
+  position: absolute;
+  /* top: 55px; */
+  /* right: 55px; */
+  top: 29px;
+  /* right: 36px; for padding 20px */
+  right: 40px;
+  -webkit-user-drag: none;
+}
+
+.password-information {
+  width: 350px;
+  padding: 0 25px;
+  /* padding: 10px; */
+  /* border: 1px solid blue; */
+  font-size: 14px;
+}
+
+.password-requirements {
+  font-size: 12px;
+}
+
+.capslock-message {
+  width: 284px;
+  /* display: flex; */
+  grid-template-columns: 22px 1fr; 
+  gap: 6px; /* adds a gap between icon and text */
+  font-size: 12px;
+  align-items: center; /* centers text vertically */
+  display: none;
+  padding-bottom: 15px;
+}
+
+.invalid-message {
+  width: 284px;
+  /* display: grid; */
+  grid-template-columns: 22px 1fr; 
+  gap: 6px;
+  font-size: 12px;
+  display: none;
+  padding-bottom: 15px;
+}
+
+#successful-message {
+  width: 284px;
+  /* display: grid; */
+  grid-template-columns: 22px 1fr;
+  gap: 8px;
+  font-size: 12px;
+  display: none;
+  align-items: center;
+  padding-bottom: 15px;
+}
+
+.eight-characters,
+.uppercase,
+.number,
+.special-character {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 6px;
+  /* padding: 2px; */
+  align-items: center;
+}
+
+#toggle-eight,
+#toggle-uppercase,
+#toggle-number,
+#toggle-specialcharacter,
+#info-icon,
+#alert-icon,
+#successful-icon {
+  width: 22px;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+span {
+  font-weight: 600;
+}
+
+#create-btn {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 9px 18px;
+  background-color: rgb(36, 36, 36);
+  color: white;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;  
+}
+
+#create-btn:hover {
+  background-color: #3e3e3e;
+}
