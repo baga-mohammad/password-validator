@@ -1,6 +1,3 @@
-// =====================
-// Grab elements
-// =====================
 const eyeSymbol = document.getElementById('eye-icon');
 const passwordInput = document.getElementById('password');
 const createBtn = document.getElementById('create-btn');
@@ -14,19 +11,10 @@ const toggleUppercase = document.getElementById('toggle-uppercase');
 const toggleNumber = document.getElementById('toggle-number');
 const toggleSpecialCharacter = document.getElementById('toggle-specialcharacter');
 
-// =====================
-// State
-// =====================
 let hasSubmitted = false;
 
-// =====================
-// Initial button state
-// =====================
 createBtn.disabled = true;
 
-// =====================
-// Password visibility toggle
-// =====================
 eyeSymbol.onclick = function () {
   if (passwordInput.type === 'password') {
     eyeSymbol.src = 'icons/view.png';
@@ -37,18 +25,12 @@ eyeSymbol.onclick = function () {
   }
 };
 
-// =====================
-// Caps Lock warning
-// =====================
 passwordInput.addEventListener('keyup', (e) => {
   capsLockOn.style.display = e.getModifierState('CapsLock')
     ? 'grid'
     : 'none';
 });
 
-// =====================
-// Icon updater
-// =====================
 function updateIcon(element, isValid, allowFail) {
   if (isValid) {
     element.src = 'icons/check.png';
@@ -59,9 +41,6 @@ function updateIcon(element, isValid, allowFail) {
   }
 }
 
-// =====================
-// Validate password (icons only)
-// =====================
 function validatePassword(live = false) {
   const pwd = passwordInput.value;
 
@@ -82,9 +61,6 @@ function validatePassword(live = false) {
   return rules;
 }
 
-// =====================
-// Handle submission (Enter or Button)
-// =====================
 function handleSubmit() {
   hasSubmitted = true;
 
@@ -101,11 +77,9 @@ function handleSubmit() {
     return;
   }
 
-  // SUCCESS 🎉
   invalidWarning.style.display = 'none';
   successMessage.style.display = 'grid';
 
-  // Reset everything
   passwordInput.value = '';
   createBtn.disabled = true;
   hasSubmitted = false;
@@ -116,11 +90,6 @@ function handleSubmit() {
   updateIcon(toggleSpecialCharacter, false, false);
 }
 
-// =====================
-// Events
-// =====================
-
-// Typing
 passwordInput.addEventListener('input', () => {
   invalidWarning.style.display = 'none';
   successMessage.style.display = 'none';
@@ -130,17 +99,14 @@ passwordInput.addEventListener('input', () => {
   validatePassword(true);
 });
 
-// Blur → icons only
 passwordInput.addEventListener('blur', () => {
   validatePassword();
 });
 
-// Enter key
 passwordInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {
     handleSubmit();
   }
 });
 
-// Button click
 createBtn.addEventListener('click', handleSubmit);
